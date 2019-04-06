@@ -1,0 +1,171 @@
+﻿<Window x:Class="WRLRR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WRLRR"
+        mc:Ignorable="d"
+        Title="Database Test" Height="677.66">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Expander Header="Employees" Background="Gray" Margin="0,0,-0.2,0">
+                <Border Background="Gray" CornerRadius="5" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel>
+                        <Button x:Name="btnGetAllEmployees" Content="Get All Employees" Margin="10,2" Click="btnGetAllEmployees_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Employee Id"/>
+                            <TextBox x:Name="tbEmployeeID" Width="40" Margin="2" TextChanged="tbEmployeeID_TextChanged"/>
+                        </StackPanel>
+                        <Button x:Name="btnGetEmployee" Content="Get Employee By ID" Margin="10,2" Click="btnGetEmployee_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="First Name"/>
+                            <TextBox x:Name="tbFirstName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Middle Name"/>
+                            <TextBox x:Name="tbMiddleName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Last Name"/>
+                            <TextBox x:Name="tbLastName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Employee #"/>
+                            <TextBox x:Name="tbEmployeeNumber" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <!--<StackPanel Orientation="Horizontal">
+                        <Label Content="Department ID"/>
+                        <TextBox x:Name="tbDepartmentID" Width="75" Margin="2" HorizontalAlignment="Right"/>
+                    </StackPanel>-->
+                        <Button x:Name="btnAddEmployee" Content="Add Employee" Click="btnAddEmployee_Click" Margin="10,2"/>
+                        <Button x:Name="btnUPdateEmployee" Content="Update Employee" Click="btnUPdateEmployee_Click" 
+                            ToolTip="Update Employee at specific ID" Margin="10,2" IsEnabled="False"/>
+                        <Button x:Name="btnFindEmployeeName" Content="Find Employee By Name" Click="btnFindEmployeeName_Click" Margin="10,2"/>
+                        <Button x:Name="btnDoesEmployeeExist" Content="Does Employee Exist By First and Last Name" Click="btnDoesEmployeeExist_Click" Margin="10,2"/>
+                        <Button x:Name="ClearEmployee" Content="Clear Employees" Click="ClearEmployee_Click" Margin="10,2"/>
+                    </StackPanel>
+                </Border>
+            </Expander>
+            <Expander Header="Customers" Background="LightBlue">
+                <Border Background="LightBlue" CornerRadius="5" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel>
+                        <Button x:Name="btnGetAllCustomers" Content="Get All Customers" Margin="10,2" Click="btnGetAllCustomers_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Customer Id"/>
+                            <TextBox x:Name="tbCustomerID" Width="40" Margin="2" TextChanged="tbCustomerID_TextChanged"/>
+                        </StackPanel>
+                        <Button x:Name="btnGetCustomer" Content="Get Customer By ID" Margin="10,2" Click="btnGetCustomer_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="First Name"/>
+                            <TextBox x:Name="tbCFirstName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Middle Name"/>
+                            <TextBox x:Name="tbCMiddleName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Last Name"/>
+                            <TextBox x:Name="tbCLastName" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Customer #"/>
+                            <TextBox x:Name="tbCustomerNumber" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <Button x:Name="btnAddCustomer" Content="Add Customer" Click="btnAddCustomer_Click" Margin="10,2"/>
+                        <Button x:Name="btnUpdateCustomer" Content="Update Customer" Click="btnUpdateCustomer_Click" 
+                            ToolTip="Update Customer at specific ID" Margin="10,2" IsEnabled="False"/>
+                        <Button x:Name="ClearCustomer" Content="Clear Customers" Click="ClearCustomer_Click" Margin="10,2"/>
+                    </StackPanel>
+                </Border>
+            </Expander>
+            <Expander Header="Sales Forms" Background="Moccasin" >
+                <Border Background="Moccasin" CornerRadius="5" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel>
+                        <Button x:Name="btnGetAllSalesForms" Content="Get All Sales Forms" Margin="10,2" Click="btnGetAllSalesForms_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Sales Form Id"/>
+                            <TextBox x:Name="tbSalesFormID" Width="40" Margin="2" TextChanged="tbSalesFormID_TextChanged"/>
+                        </StackPanel>
+                        <Button x:Name="btnGetSalesForm" Content="Get Sales Form By ID" Margin="10,2" Click="btnGetSalesForm_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Date Issued"/>
+                            <DatePicker x:Name="dpDateIssued" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Amount"/>
+                            <TextBox x:Name="tbAmount" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <Button x:Name="btnAddSalesForm" Content="Add Sales Form" Click="btnAddSalesForm_Click" Margin="10,2"/>
+                        <Button x:Name="btnUpdateSalesForm" Content="Update Sales Form" Click="btnUpdateSalesForm_Click" 
+                            ToolTip="Update Sales Form at specific ID" Margin="10,2" IsEnabled="False"/>
+                        <Button x:Name="ClearSalesForm" Content="Clear SalesForms" Click="ClearSalesForm_Click" Margin="10,2"/>
+                    </StackPanel>
+                </Border>
+            </Expander>
+            <Expander Header="Misc" Background="LightGreen" Width="150">
+                <Border Background="LightGreen" CornerRadius="5" BorderBrush="Black" BorderThickness="1" Width="150">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="State Name"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="75" Name="tbStateName" Margin="2"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="State Abbrevation"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="40" Name="tbStateAbbreviation" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Zip Code"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="90" Name="tbZipCode" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="City Name"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="80" Name="tbCityName" Margin="2"/>
+                        </StackPanel>
+                        <Button Content="Add Location" Name="btnAddLocation" Click="btnAddLocation_Click" Margin="10,2"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Number Of Orders"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="35" Name="tbNumberOfOrders" Margin="2"/>
+                        </StackPanel>
+                        <Button Content="Get Suppliers" Name="btnGetSuppliers" Margin="10,2" Click="btnGetSuppliers_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Category ID"/>
+                            <TextBox TextWrapping="Wrap" Text="" Width="70" Name="tbCategoryID" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Date Bought"/>
+                            <DatePicker x:Name="dpDatePurchased" Width="75" Margin="2"/>
+                        </StackPanel>
+                        <Button Content="Get Item Info" Name="btnGetItemInfo" Margin="10,2" Click="btnGetItemInfo_Click"/>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <DatePicker x:Name="dpDate" Height="25" HorizontalAlignment="Left" Margin="42,26,0,0" VerticalAlignment="Top" Width="115" />
+                        </StackPanel>
+                        <Button x:Name="btnPurchaseInfoByDate" Content="Purchase Info By Date" Margin="10,2" Click="btnPurchaseInfoByDate_Click_1"/>
+                        <Button x:Name="btRepairYear" Content="Repairs for Year" Margin="10,2" Click="btRepairYear_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="TechnicianID"></Label>
+                            <TextBox x:Name="tbTechID" Width="40" Margin="2"/>
+
+                        </StackPanel>
+                        <Button x:Name="btnTechID" Content="Search for Equipment by Technician ID" Margin="10,2" Click="btnTechID_Click_1"/>
+                        <StackPanel>
+                            <DatePicker x:Name="dpStart" Height="25" HorizontalAlignment="Left" Margin="42,10,0,0" VerticalAlignment="Top" Width="115"/>
+                            <DatePicker x:Name="dpEnd" Height="25" HorizontalAlignment="Left" Margin="42,10,0,0" VerticalAlignment="Top" Width="115"/>
+                        </StackPanel>
+                        <Button x:Name="btGetSerial" Content="Get Serial# Between Date" Margin="10,2" Click="btGetSerial_Click"/>
+                    </StackPanel>
+
+                </Border>
+            </Expander>
+        </StackPanel>
+
+        <ListView x:Name="lvShowData" Grid.Column="1" SelectionChanged="lvShowData_SelectionChanged" />
+    </Grid>
+</Window>
